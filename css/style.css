@@ -1,0 +1,92 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 740px;
+    background-color: #f0cf83;
+}
+
+.container {
+    margin: 0 500px;
+}
+
+.main_img {
+    width: 100%;
+    height: auto;
+}
+
+.main_text {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    /* line-height: 15px */
+}
+
+.main_btn {
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    height: 70px;
+}
+
+.yes {
+    position: absolute;
+    bottom: 25px;
+    left: 100px;
+    width: 100px;
+    height: 30px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 4px;
+    background: linear-gradient(0deg, #1EACC7 0%, #6e5dbd 100%);
+    box-shadow: 0px -3px 0px 0px rgba(216, 171, 171, 0.12) inset;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.no {
+    position: absolute;
+    bottom: 25px;
+    right: 100px;
+    width: 100px;
+    height: 30px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 4px;
+    background: linear-gradient(0deg, #c71e40 0%, #de3f3f 100%);
+    box-shadow: 0px -3px 0px 0px rgba(216, 171, 171, 0.12) inset;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+/* Добавлен медиа-запрос для мобильных устройств */
+@media only screen and (max-width: 767px) {
+    .container {
+        margin: 0 20px; /* Изменил значение margin для мобильных устройств */
+    }
+
+    .main_text {
+        font-size: 16px; /* Уменьшил размер шрифта для мобильных устройств */
+    }
+
+    .yes,
+    .no {
+        padding: 0 20px;
+        width: 80px; /* Уменьшил ширину кнопок для мобильных устройств */
+        height: 25px; /* Уменьшил высоту кнопок для мобильных устройств */
+        font-size: 12px; /* Уменьшил размер шрифта для мобильных устройств */
+    }
+}
+
+
+  

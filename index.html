@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Мир, дружба, жвачка!</title>
+</head>
+<body>
+    <section class="main" id="mySection">
+        <div class="container">
+            <img src="https://steamuserimages-a.akamaihd.net/ugc/867367817413461713/78A0867B90640857791A9E774A9435EE33313A4C/" alt="cat" class="main_gif" id="displayGif">
+            <div class="main_text" id="displayText">Давай вместо обидных слов будем чаще говорить, что любим друг друга, согласна?👩‍❤️‍👨</div>
+            <div class="main_btn">
+                <button id="changeContentButton"class="yes">ДА!😎</button>
+                <button id="movingButton" class="no">НЕТ🤕</button>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#movingButton").hover(function() {
+                // Получаем размеры экрана
+                var screenWidth = $(window).width();
+                var screenHeight = $(window).height();
+        
+                // Получаем размеры кнопки
+                var buttonWidth = $(this).width();
+                var buttonHeight = $(this).height();
+        
+                // Вычисляем максимальные координаты, чтобы кнопка не выходила за границы экрана
+                var maxX = screenWidth - buttonWidth;
+                var maxY = screenHeight - buttonHeight;
+        
+                // Генерируем случайные координаты в пределах экрана
+                var newX = Math.random() * maxX;
+                var newY = Math.random() * maxY;
+        
+                // Плавно перемещаем кнопку
+                $(this).animate({ 
+                    left: newX + "px",
+                    top: newY + "px"
+                }, 500); // 500 миллисекунд для плавного перемещения
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#changeContentButton").click(function() {
+                // Изменяем текст
+                $("#displayText").text("Ураааааа!!! Тогда встречаемся 5 февраля в 21:00 возле памятника Ломоносову😇");
+
+                // Изменяем gif
+                $("#displayGif").attr("src", "https://steamuserimages-a.akamaihd.net/ugc/867367817413466577/A455A49149DE22C976859232C8B629BCC8D1E37E/");
+
+                // Скрываем другую кнопку
+                $("#movingButton").hide();
+                $("#changeContentButton").hide();
+            });
+        });
+    </script>
+        
+
+</body>
+</html>
